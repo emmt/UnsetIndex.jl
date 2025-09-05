@@ -6,8 +6,8 @@ using Aqua
     map_isassigned(A::AbstractArray) = map(i -> isassigned(A, i), eachindex(A))
     @testset "`unset` singleton" begin
         @test string(unset) == "#undef"
-        @test ndims(typeof(unset)) === 0
-        @test eltype(typeof(unset)) === typeof(unset)
+        @test ndims(unset) === ndims(typeof(unset)) === 0
+        @test eltype(unset) === eltype(typeof(unset)) === typeof(unset)
         @test length(unset) === 1
         @test size(unset) === ()
         @test axes(unset) === ()

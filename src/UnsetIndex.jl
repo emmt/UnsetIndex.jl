@@ -66,6 +66,7 @@ let arraytypes = [:Array]
 end
 
 # Abstract array API for `unset` to behave like a `Number`.
+Base.ndims(x::Unset) = 0
 Base.ndims(::Type{Unset}) = 0
 Base.eltype(::Type{Unset}) = Unset
 Base.length(::Unset) = 1
