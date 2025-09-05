@@ -45,5 +45,10 @@ julia> map(i -> isassigned(A, i), eachindex(A))
 
 ```
 
-`UnsetIndex` makes publicly available a trick used in base Julia for some structures like
-dictionaries.
+It is also possible to unset entries using dot notation. For example:
+
+``` julia
+@. A = unset       # unset all entries of A
+A[:] .= unset      # unset all entries of A
+A[3:2:15] .= unset # unset every other entry of A between the 3rd and the 15th
+```

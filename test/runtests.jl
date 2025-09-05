@@ -17,6 +17,14 @@ using Aqua
         @test map_isassigned(X) == [false, true, true, true, true, true]
         X[end] = unset
         @test map_isassigned(X) == [false, true, true, true, true, false]
+        X[1:2:5] .= unset
+        @test map_isassigned(X) == [false, true, false, true, false, false]
+        copyto!(X, words)
+        X[:] .= unset
+        @test map_isassigned(X) == [false, false, false, false, false, false]
+        copyto!(X, words)
+        @. X = unset
+        @test map_isassigned(X) == [false, false, false, false, false, false]
     end
 end
 

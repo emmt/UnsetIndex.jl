@@ -14,6 +14,12 @@ struct Unset end
 Delete non-bit object stored at index `i` of array `A`. This amounts to calling
 [`unsetindex!(A, i)`](@ref unsetindex!) which to see.
 
+It is also possible to unset entries using dot notation. For example:
+
+    @. A = unset       # unset all entries of A
+    A[:] .= unset      # unset all entries of A
+    A[3:2:15] .= unset # unset every other entry of A between the 3rd and the 15th
+
 """
 const unset = Unset()
 
@@ -58,5 +64,18 @@ let arraytypes = [:Array]
         end
     end
 end
+
+# Abstract array API for `unset` to behave like a `Number`.
+Base.ndims(::Type{Unset}) = 0
+Base.eltype(::Type{Unset}) = Unset
+Base.length(::Unset) = 1
+Base.size(::Unset) = ()
+Base.axes(::Unset) = ()
+Base.getindex(x::Unset) = x
+Base.isempty(x::Unset) = false
+Base.iterate(x::Unset) = (x, nothing)
+Base.iterate(x::Unset, ::Any) = nothing
+Base.IteratorEltype(::Type{Unset}) = Base.HasEltype()
+Base.IteratorSize(::Type{Unset}) = Base.HasLength() # FIXME not Base.HasShape{0}() for dot notation to work
 
 end # module
