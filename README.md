@@ -17,7 +17,7 @@ A[i] = unset
 setindex!(A, unset, i)
 ```
 
-The above 3 statements are equivalent and delete the entry at index `i` of array `A` if it
+The former 3 statements are equivalent and delete the entry at index `i` of array `A` if it
 has a non-bit type; otherwise, the entry is left unchanged. In any case, bound checking is
 performed unless `@inbounds` is active. The only restriction is that `A` must be of type
 `Array` or `Memory`.
