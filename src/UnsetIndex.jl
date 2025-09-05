@@ -45,6 +45,7 @@ let arraytypes = [:Array]
     for type in arraytypes
         @eval begin
             @propagate_inbounds Base.setindex!(A::$type, ::Unset, i::Int) = unsetindex!(A, i)
+            @propagate_inbounds Base.setindex!(A::$type{Any}, ::Unset, i::Int) = unsetindex!(A, i)
         end
         @static if isdefined(Base, :_unsetindex!)
             @eval @propagate_inbounds unsetindex!(A::$type, i::Int) = Base._unsetindex!(A, i)

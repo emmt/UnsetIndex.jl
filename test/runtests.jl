@@ -1,5 +1,6 @@
 using UnsetIndex
 using Test
+using Aqua
 
 @testset "UnsetIndex.jl" begin
     map_isassigned(A::AbstractArray) = map(i -> isassigned(A, i), eachindex(A))
@@ -28,3 +29,5 @@ using Test
         end
     end
 end
+
+Aqua.test_all(UnsetIndex)

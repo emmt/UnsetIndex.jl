@@ -1,6 +1,7 @@
 # UnsetIndex
 
 [![Build Status](https://github.com/emmt/UnsetIndex.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/emmt/UnsetIndex.jl/actions/workflows/CI.yml?query=branch%3Amain) [![Build Status](https://ci.appveyor.com/api/projects/status/github/emmt/UnsetIndex.jl?svg=true)](https://ci.appveyor.com/project/emmt/UnsetIndex-jl) [![Coverage](https://codecov.io/gh/emmt/UnsetIndex.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/emmt/UnsetIndex.jl)
+[![Aqua QA](https://raw.githubusercontent.com/JuliaTesting/Aqua.jl/master/badge.svg)](https://github.com/JuliaTesting/Aqua.jl)
 
 `UnsetIndex` is a [Julia](https://www.julialang.org) package to effectively delete objects
 stored in arrays and without changing anything else in the array unlike `deleteat!(A,i)` or
