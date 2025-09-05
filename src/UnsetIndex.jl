@@ -2,7 +2,7 @@ module UnsetIndex
 
 export unset, unsetindex!
 
-using Base: @propagate_inbounds
+using Base: @propagate_inbounds, isbitsunion
 
 # Singleton type for `unset` constant.
 struct Unset end
