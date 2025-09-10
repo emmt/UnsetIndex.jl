@@ -1,7 +1,7 @@
 name = "UnsetIndex"
 uuid = "cc9ef2aa-5034-4aa9-a69b-c36694cce9f8"
 authors = ["Éric Thiébaut <eric.thiebaut@univ-lyon1.fr> and contributors"]
-version = "0.1.1"
+version = "0.1.2"
 
 [compat]
 Aqua = "0.8"
